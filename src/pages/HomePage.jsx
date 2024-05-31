@@ -51,7 +51,7 @@ const HomePage = () => {
     }
 
     getStores();
-  }, []);
+  }, [query.get('territory_id')]);
   return (
     <div className="bg-white font-googleSans min-h-screen w-full flex flex-col justify-start items-center pb-10 xl:flex-row">
       {/* <QuizNavbar /> */}
