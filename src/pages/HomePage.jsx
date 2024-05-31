@@ -9,7 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import Swal from 'sweetalert2';
 import { QuizNavbar } from '../Components';
 
-const contest_id = 2;
+const contest_id = 3;
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
