@@ -1,4 +1,4 @@
-# Use a Node.js base image with a specified version
+# Use the latest Node.js base image
 FROM node:latest
 
 # Set the working directory inside the container
@@ -16,8 +16,11 @@ COPY . .
 # Build the React app for production
 RUN npm run build
 
-# Expose the port the app runs on
-EXPOSE 3000
+# Install a lightweight HTTP server to serve the built React app
+RUN npm install -g serve
 
-# Command to start the React app
-CMD ["npm", "start"]
+# Expose the port for the HTTP server
+EXPOSE 80
+
+# Command to serve the built React app using the HTTP server
+CMD ["serve", "-s", "-l", "80", "build"]
