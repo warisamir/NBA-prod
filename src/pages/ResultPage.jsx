@@ -20,9 +20,9 @@ const ResultPage = () => {
   const [showConfetti, setShowConfetti] = useState(false);
 
   const handleClick = () => {
-    // window.flutter_inappwebview.callHandler('MessageChannel', 'navigateToNewScreen');
-    // Toaster.postMessage('buttonClicked');
-requestUri.scheme == 'onehub' && requestUri.host == 'callback'
+    window.flutter_inappwebview.callHandler('MessageChannel', 'navigateToNewScreen');
+    Toaster.postMessage('buttonClicked');
+// requestUri.scheme == 'onehub' && requestUri.host == 'callback'
   }
 
   const [rewardsData, setRewardsData] = useState(null);
